@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "G6m-Zb-7SP"; */
+"G6m-Zb-7SP.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Table"; ObjectID = "Lm0-zj-TsY"; */
+"Lm0-zj-TsY.title" = "Table";
+
+/* Class = "UILabel"; text = "City:"; ObjectID = "cVX-MO-SJl"; */
+"cVX-MO-SJl.text" = "Stadt:";
+
+/* Class = "UILabel"; text = "Date:"; ObjectID = "jOT-8y-uKP"; */
+"jOT-8y-uKP.text" = "Date:";
+
+/* Class = "UITabBarItem"; title = "Picker"; ObjectID = "mGN-S9-zNc"; */
+"mGN-S9-zNc.title" = "Picker";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zrC-x7-IDc"; */
+"zrC-x7-IDc.text" = "Label";
