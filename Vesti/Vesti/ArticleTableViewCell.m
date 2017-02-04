@@ -18,7 +18,7 @@
     
     self.titleLabel.text = article.title;
     self.portalLabel.text = article.portal;
-    
+    self.coverImageView.layer.cornerRadius = self.coverImageView.frame.size.width/2; //da slika bude krug
     [self.coverImageView loadImageFromURL:article.imageURL];
 }
 @end
