@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21DB4521E4B889800E0323D /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21DB4511E4B889800E0323D /* WebViewController.m */; };
 		B2D26AB41E45C8C800379FC2 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D26AB31E45C8C800379FC2 /* ArticleTableViewCell.m */; };
 		B2D26AB71E45E13900379FC2 /* UIImageView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D26AB61E45E13900379FC2 /* UIImageView+Utilities.m */; };
 		B2FA7EFE1E450632003F1432 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FA7EFD1E450632003F1432 /* main.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B21DB4501E4B889800E0323D /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		B21DB4511E4B889800E0323D /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		B2D26AB21E45C8C800379FC2 /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		B2D26AB31E45C8C800379FC2 /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		B2D26AB51E45E13900379FC2 /* UIImageView+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Utilities.h"; sourceTree = "<group>"; };
@@ -71,6 +74,8 @@
 				B2FA7F001E450632003F1432 /* AppDelegate.m */,
 				B2FA7F021E450632003F1432 /* HomeViewController.h */,
 				B2FA7F031E450632003F1432 /* HomeViewController.m */,
+				B21DB4501E4B889800E0323D /* WebViewController.h */,
+				B21DB4511E4B889800E0323D /* WebViewController.m */,
 				B2FA7F141E4511F0003F1432 /* Article.h */,
 				B2FA7F151E4511F0003F1432 /* Article.m */,
 				B2D26AB51E45E13900379FC2 /* UIImageView+Utilities.h */,
@@ -166,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2FA7F161E4511F0003F1432 /* Article.m in Sources */,
+				B21DB4521E4B889800E0323D /* WebViewController.m in Sources */,
 				B2D26AB71E45E13900379FC2 /* UIImageView+Utilities.m in Sources */,
 				B2FA7F041E450632003F1432 /* HomeViewController.m in Sources */,
 				B2FA7F011E450632003F1432 /* AppDelegate.m in Sources */,
