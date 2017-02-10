@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B21DB4521E4B889800E0323D /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21DB4511E4B889800E0323D /* WebViewController.m */; };
+		B26B72601E4E2C100021762E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B26B725F1E4E2C100021762E /* Reachability.m */; };
+		B26B72631E4E2C3C0021762E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26B72621E4E2C3C0021762E /* SystemConfiguration.framework */; };
 		B2D26AB41E45C8C800379FC2 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D26AB31E45C8C800379FC2 /* ArticleTableViewCell.m */; };
 		B2D26AB71E45E13900379FC2 /* UIImageView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D26AB61E45E13900379FC2 /* UIImageView+Utilities.m */; };
 		B2FA7EFE1E450632003F1432 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FA7EFD1E450632003F1432 /* main.m */; };
@@ -22,6 +24,9 @@
 /* Begin PBXFileReference section */
 		B21DB4501E4B889800E0323D /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		B21DB4511E4B889800E0323D /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		B26B725E1E4E2C100021762E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B26B725F1E4E2C100021762E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B26B72621E4E2C3C0021762E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B2D26AB21E45C8C800379FC2 /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		B2D26AB31E45C8C800379FC2 /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		B2D26AB51E45E13900379FC2 /* UIImageView+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Utilities.h"; sourceTree = "<group>"; };
@@ -45,16 +50,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26B72631E4E2C3C0021762E /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B26B725D1E4E2C100021762E /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				B26B725E1E4E2C100021762E /* Reachability.h */,
+				B26B725F1E4E2C100021762E /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		B26B72611E4E2C3C0021762E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B26B72621E4E2C3C0021762E /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B2FA7EF01E450631003F1432 = {
 			isa = PBXGroup;
 			children = (
 				B2FA7EFB1E450632003F1432 /* Vesti */,
+				B26B72611E4E2C3C0021762E /* Frameworks */,
 				B2FA7EFA1E450632003F1432 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +94,7 @@
 		B2FA7EFB1E450632003F1432 /* Vesti */ = {
 			isa = PBXGroup;
 			children = (
+				B26B725D1E4E2C100021762E /* Reachability */,
 				B2FA7EFF1E450632003F1432 /* AppDelegate.h */,
 				B2FA7F001E450632003F1432 /* AppDelegate.m */,
 				B2FA7F021E450632003F1432 /* HomeViewController.h */,
@@ -172,6 +197,7 @@
 			files = (
 				B2FA7F161E4511F0003F1432 /* Article.m in Sources */,
 				B21DB4521E4B889800E0323D /* WebViewController.m in Sources */,
+				B26B72601E4E2C100021762E /* Reachability.m in Sources */,
 				B2D26AB71E45E13900379FC2 /* UIImageView+Utilities.m in Sources */,
 				B2FA7F041E450632003F1432 /* HomeViewController.m in Sources */,
 				B2FA7F011E450632003F1432 /* AppDelegate.m in Sources */,

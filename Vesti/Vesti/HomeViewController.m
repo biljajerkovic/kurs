@@ -10,6 +10,7 @@
 #import "Article.h"
 #import "ArticleTableViewCell.h"
 #import "WebViewController.h"
+#import "Reachability.h"
 
 //#define URL @"http://www.brzevesti.net/api/news"
 static NSString *const URL = @"http://www.brzevesti.net/api/news";
@@ -50,12 +51,47 @@ static NSString *const STORYBOARD = @"Main";
     });
 }
 
+- (BOOL)isConnected {
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus status = [reachability currentReachabilityStatus];
+    
+    if (status == ReachableViaWiFi || status == ReachableViaWWAN) {
+        return YES;
+    }
+    return NO;
+}
+
+- (void)showConnectionError {
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Network Error" message:@"Please provide Internet connection" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (UIViewController *)viewControllerForIdentifier:(NSString *)identifier {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:STORYBOARD bundle:nil];
+    return [storyboard instantiateViewControllerWithIdentifier:identifier];
+}
+
+-(void)showArticle:(Article *)article {
+    WebViewController *toViewController = (WebViewController *)[self viewControllerForIdentifier:NSStringFromClass([WebViewController class])];
+    
+    toViewController.url = article.url;
+    [self.navigationController pushViewController:toViewController animated:YES];
+}
+                               
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadArticles];
+    if ([self isConnected]) {
+        [self loadArticles];
+    } else {
+        [self showConnectionError];
+    }
 }
 
 #pragma  mark - UITableViewDataSource
@@ -82,12 +118,12 @@ static NSString *const STORYBOARD = @"Main";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     // Show WebViewController
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:STORYBOARD bundle:nil];
-    WebViewController *toViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([WebViewController class])];
-    
-    Article *article = self.itemsArray[indexPath.row];
-    toViewController.url = article.url;
-    [self.navigationController pushViewController:toViewController animated:YES];
+    if ([self isConnected]) {
+        Article *article = self.itemsArray[indexPath.row];
+        [self showArticle:article];
+    } else {
+        [self showConnectionError];
+    }
 }
 
 @end
