@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B207C9991E16D11600830639 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B207C9981E16D11600830639 /* SignUpViewController.m */; };
 		B21217461E4F0F9B005DABF5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21217451E4F0F9B005DABF5 /* HomeViewController.m */; };
+		B247947F1E54CAC200E5AFB2 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B247947E1E54CAC200E5AFB2 /* Helpers.m */; };
 		C3EF78791E01BDD600A12F37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EF78781E01BDD600A12F37 /* main.m */; };
 		C3EF787C1E01BDD600A12F37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EF787B1E01BDD600A12F37 /* AppDelegate.m */; };
 		C3EF78821E01BDD600A12F37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EF78801E01BDD600A12F37 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 		B207C9981E16D11600830639 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		B21217441E4F0F9B005DABF5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		B21217451E4F0F9B005DABF5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		B247947D1E54CAC200E5AFB2 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		B247947E1E54CAC200E5AFB2 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		C3EF78741E01BDD600A12F37 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EF78781E01BDD600A12F37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C3EF787A1E01BDD600A12F37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 				C3EF788F1E01CA8600A12F37 /* LoginViewController.m */,
 				B207C9971E16D11600830639 /* SignUpViewController.h */,
 				B207C9981E16D11600830639 /* SignUpViewController.m */,
+				B247947D1E54CAC200E5AFB2 /* Helpers.h */,
+				B247947E1E54CAC200E5AFB2 /* Helpers.m */,
 				C3EF78801E01BDD600A12F37 /* Main.storyboard */,
 				C3EF78831E01BDD600A12F37 /* Assets.xcassets */,
 				C3EF78851E01BDD600A12F37 /* LaunchScreen.storyboard */,
@@ -163,6 +168,7 @@
 				C3EF787C1E01BDD600A12F37 /* AppDelegate.m in Sources */,
 				C3EF78791E01BDD600A12F37 /* main.m in Sources */,
 				B207C9991E16D11600830639 /* SignUpViewController.m in Sources */,
+				B247947F1E54CAC200E5AFB2 /* Helpers.m in Sources */,
 				B21217461E4F0F9B005DABF5 /* HomeViewController.m in Sources */,
 				C3EF78901E01CA8600A12F37 /* LoginViewController.m in Sources */,
 			);
