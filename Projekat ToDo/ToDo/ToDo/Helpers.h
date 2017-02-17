@@ -10,4 +10,5 @@
 
 @interface Helpers : NSObject
 + (BOOL)isMorning;
++ (NSString *)valueFrom: (NSDate *)date withFormat:(NSString *)format;
 @end

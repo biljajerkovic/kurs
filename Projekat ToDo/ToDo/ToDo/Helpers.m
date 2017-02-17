@@ -19,4 +19,10 @@
     }
     return NO;
 }
+
++ (NSString *)valueFrom:(NSDate *)date withFormat:(NSString *)format {
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
+    dateFormater.dateFormat = format;
+    return [dateFormater stringFromDate:date];
+}
 @end

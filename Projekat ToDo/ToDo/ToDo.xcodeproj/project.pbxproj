@@ -10,6 +10,7 @@
 		B207C9991E16D11600830639 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B207C9981E16D11600830639 /* SignUpViewController.m */; };
 		B21217461E4F0F9B005DABF5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21217451E4F0F9B005DABF5 /* HomeViewController.m */; };
 		B247947F1E54CAC200E5AFB2 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B247947E1E54CAC200E5AFB2 /* Helpers.m */; };
+		B2E5683E1E57858600D92FA7 /* DateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5683D1E57858600D92FA7 /* DateCollectionViewCell.m */; };
 		C3EF78791E01BDD600A12F37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EF78781E01BDD600A12F37 /* main.m */; };
 		C3EF787C1E01BDD600A12F37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EF787B1E01BDD600A12F37 /* AppDelegate.m */; };
 		C3EF78821E01BDD600A12F37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3EF78801E01BDD600A12F37 /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 		B21217451E4F0F9B005DABF5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		B247947D1E54CAC200E5AFB2 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		B247947E1E54CAC200E5AFB2 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
+		B2E5683C1E57858600D92FA7 /* DateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCollectionViewCell.h; sourceTree = "<group>"; };
+		B2E5683D1E57858600D92FA7 /* DateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCollectionViewCell.m; sourceTree = "<group>"; };
 		C3EF78741E01BDD600A12F37 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EF78781E01BDD600A12F37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C3EF787A1E01BDD600A12F37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,6 +51,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2E568371E57842600D92FA7 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C3EF787A1E01BDD600A12F37 /* AppDelegate.h */,
+				C3EF787B1E01BDD600A12F37 /* AppDelegate.m */,
+			);
+			name = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		B2E568381E5784A500D92FA7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B21217441E4F0F9B005DABF5 /* HomeViewController.h */,
+				B21217451E4F0F9B005DABF5 /* HomeViewController.m */,
+				C3EF788E1E01CA8600A12F37 /* LoginViewController.h */,
+				C3EF788F1E01CA8600A12F37 /* LoginViewController.m */,
+				B207C9971E16D11600830639 /* SignUpViewController.h */,
+				B207C9981E16D11600830639 /* SignUpViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B2E568391E5784B800D92FA7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B247947D1E54CAC200E5AFB2 /* Helpers.h */,
+				B247947E1E54CAC200E5AFB2 /* Helpers.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		B2E5683A1E5784EA00D92FA7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C3EF78801E01BDD600A12F37 /* Main.storyboard */,
+				C3EF78851E01BDD600A12F37 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		B2E5683B1E57854000D92FA7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5683C1E57858600D92FA7 /* DateCollectionViewCell.h */,
+				B2E5683D1E57858600D92FA7 /* DateCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		C3EF786B1E01BDD600A12F37 = {
 			isa = PBXGroup;
 			children = (
@@ -67,20 +119,10 @@
 		C3EF78761E01BDD600A12F37 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				C3EF787A1E01BDD600A12F37 /* AppDelegate.h */,
-				C3EF787B1E01BDD600A12F37 /* AppDelegate.m */,
-				B21217441E4F0F9B005DABF5 /* HomeViewController.h */,
-				B21217451E4F0F9B005DABF5 /* HomeViewController.m */,
-				C3EF788E1E01CA8600A12F37 /* LoginViewController.h */,
-				C3EF788F1E01CA8600A12F37 /* LoginViewController.m */,
-				B207C9971E16D11600830639 /* SignUpViewController.h */,
-				B207C9981E16D11600830639 /* SignUpViewController.m */,
-				B247947D1E54CAC200E5AFB2 /* Helpers.h */,
-				B247947E1E54CAC200E5AFB2 /* Helpers.m */,
-				C3EF78801E01BDD600A12F37 /* Main.storyboard */,
-				C3EF78831E01BDD600A12F37 /* Assets.xcassets */,
-				C3EF78851E01BDD600A12F37 /* LaunchScreen.storyboard */,
-				C3EF78881E01BDD600A12F37 /* Info.plist */,
+				B2E5683B1E57854000D92FA7 /* Cells */,
+				B2E568381E5784A500D92FA7 /* View Controllers */,
+				B2E568391E5784B800D92FA7 /* Utilities */,
+				B2E5683A1E5784EA00D92FA7 /* Storyboards */,
 				C3EF78771E01BDD600A12F37 /* Supporting Files */,
 			);
 			path = ToDo;
@@ -89,6 +131,9 @@
 		C3EF78771E01BDD600A12F37 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2E568371E57842600D92FA7 /* Application Delegate */,
+				C3EF78831E01BDD600A12F37 /* Assets.xcassets */,
+				C3EF78881E01BDD600A12F37 /* Info.plist */,
 				C3EF78781E01BDD600A12F37 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -166,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3EF787C1E01BDD600A12F37 /* AppDelegate.m in Sources */,
+				B2E5683E1E57858600D92FA7 /* DateCollectionViewCell.m in Sources */,
 				C3EF78791E01BDD600A12F37 /* main.m in Sources */,
 				B207C9991E16D11600830639 /* SignUpViewController.m in Sources */,
 				B247947F1E54CAC200E5AFB2 /* Helpers.m in Sources */,
