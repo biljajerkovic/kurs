@@ -7,7 +7,7 @@
 //
 
 #import "DateCollectionViewCell.h"
-#import "Helpers.m"
+#import "Helpers.h"
 
 @interface DateCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *weekdayLabel;
@@ -24,7 +24,7 @@
     _date = date;
     
     self.dayLabel.text = [Helpers valueFrom:date withFormat:@"d"];
-    self.weekdayLabel.text = [Helpers valueFrom:date withFormat:@"EEE"];
+    self.weekdayLabel.text = [self weekday];
     
     NSDate *todayDate = [NSDate date];
     if ([todayDate isEqual:date]) {
@@ -33,7 +33,17 @@
         self.highlightView.hidden = YES;
     }
     
-    //Ternary operator umesto iznad if else - AKO ISPUNJAVA USLOV UZIMA SA LEVE STRANE ":", AKO NE DESNO.
-    //self.highlightView.hidden = ([todayDate isEqualToDate:date]) ? NO : YES;
+    self.highlightView.hidden = ([Helpers isDate:date sameAsDate:[NSDate date]]) ? NO : YES; //ternarni operator
 }
+
+#pragma mark - Private API
+
+-(NSString *)weekday {
+    NSString *string = [Helpers valueFrom:self.date withFormat:@"EEEE"];
+    string = string.uppercaseString;
+    string = [string substringToIndex:3];
+    
+    return string;
+}
+
 @end

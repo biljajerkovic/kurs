@@ -25,4 +25,21 @@
     dateFormater.dateFormat = format;
     return [dateFormater stringFromDate:date];
 }
+
++ (NSInteger)numberOfDaysInMonthForDate:(NSDate *)date {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSRange range = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:date];
+    
+    return range.length;
+}
+
++ (BOOL)isDate:(NSDate *)date sameAsDate:(NSDate *)otherDate {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *dateComponents = [calendar components:NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear fromDate:date];
+    NSDateComponents *otherdateComponents = [calendar components:NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear fromDate:otherDate];
+    
+    return (dateComponents.day == otherdateComponents.day) && (dateComponents.month == otherdateComponents.month) && (dateComponents.year == otherdateComponents.year);
+
+}
 @end

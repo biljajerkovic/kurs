@@ -11,4 +11,6 @@
 @interface Helpers : NSObject
 + (BOOL)isMorning;
 + (NSString *)valueFrom: (NSDate *)date withFormat:(NSString *)format;
++ (NSInteger)numberOfDaysInMonthForDate:(NSDate *)date;
++ (BOOL)isDate:(NSDate *)date sameAsDate:(NSDate *)otherDate;
 @end
