@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mz5-kk-4Zj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NvC-Uy-33s">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -503,8 +503,9 @@
                                     <constraint firstItem="4qP-YZ-2An" firstAttribute="leading" secondItem="hwU-g5-W3Y" secondAttribute="leading" id="zQG-DD-ziN"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zke-sg-eiD">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-profile" translatesAutoresizingMaskIntoConstraints="NO" id="Zke-sg-eiD">
                                 <rect key="frame" x="137" y="158" width="102" height="102"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="V1N-69-nOY"/>
                                     <constraint firstAttribute="height" constant="102" id="Zsw-cK-rak"/>
@@ -514,6 +515,9 @@
                                         <integer key="value" value="51"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dPz-27-DPx" appends="YES" id="sVr-f6-plT"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-jx-PI4">
                                 <rect key="frame" x="207" y="158" width="32" height="32"/>
@@ -702,14 +706,6 @@
                                     <constraint firstItem="PPD-ha-xZR" firstAttribute="leading" secondItem="dHp-eM-wQu" secondAttribute="leading" id="sU9-1V-qLq"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi1-CP-x6A" userLabel="Add Button">
-                                <rect key="frame" x="303" y="595" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="N66-sQ-6d4"/>
-                                    <constraint firstAttribute="width" constant="60" id="kSr-3F-1AI"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="add"/>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r7f-5B-Rc7">
                                 <rect key="frame" x="0.0" y="456" width="375" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -718,7 +714,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6iT-qf-lJJ" id="cal-5q-apP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsN-Cj-jLJ" userLabel="Status View">
@@ -728,7 +724,7 @@
                                                         <constraint firstAttribute="width" constant="3" id="uhG-tf-w12"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-id-eyb">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-id-eyb">
                                                     <rect key="frame" x="20" y="14" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="0E7-jR-4dE"/>
@@ -775,6 +771,17 @@
                                     <outlet property="delegate" destination="Mz5-kk-4Zj" id="33n-3a-4PP"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi1-CP-x6A" userLabel="Add Button">
+                                <rect key="frame" x="303" y="595" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="N66-sQ-6d4"/>
+                                    <constraint firstAttribute="width" constant="60" id="kSr-3F-1AI"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="add"/>
+                                <connections>
+                                    <segue destination="NvC-Uy-33s" kind="show" id="CuH-ue-IQX"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5O-NA-gJ0">
                                 <rect key="frame" x="157" y="551" width="60.5" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
@@ -832,8 +839,89 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX6-tA-3RR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dPz-27-DPx">
+                    <connections>
+                        <action selector="userImageViewTapped:" destination="Mz5-kk-4Zj" id="o1v-Eo-l4u"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2362.4000000000001" y="-60.719640179910051"/>
+        </scene>
+        <!--Task View Controller-->
+        <scene sceneID="hbS-72-j3Z">
+            <objects>
+                <viewController storyboardIdentifier="TaskViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NvC-Uy-33s" customClass="TaskViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XX1-2g-lu5"/>
+                        <viewControllerLayoutGuide type="bottom" id="cl1-aj-ZD2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N6k-cA-0N2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5 - Add" translatesAutoresizingMaskIntoConstraints="NO" id="NuT-VW-spO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addtask-bg" translatesAutoresizingMaskIntoConstraints="NO" id="eiV-EI-xPF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="sAT-2H-S7C"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcZ-tu-gPm" userLabel="Back Button">
+                                <rect key="frame" x="21" y="35" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="iYC-0Z-lnr"/>
+                                    <constraint firstAttribute="height" constant="29" id="nXM-IT-Hyt"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="NvC-Uy-33s" eventType="touchUpInside" id="ZLE-Tb-lbf"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DF-pg-upw">
+                                <rect key="frame" x="21" y="117" width="333" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wLx-4f-cie"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="35"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NvC-Uy-33s" id="CBu-D2-fhl"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwB-A2-Nlu">
+                                <rect key="frame" x="290" y="157" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="5AU-4a-0u5"/>
+                                    <constraint firstAttribute="height" constant="65" id="KxY-8Z-UQg"/>
+                                </constraints>
+                                <state key="normal" image="add"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cl1-aj-ZD2" firstAttribute="top" secondItem="NuT-VW-spO" secondAttribute="bottom" id="02N-1i-t4E"/>
+                            <constraint firstAttribute="trailing" secondItem="7DF-pg-upw" secondAttribute="trailing" constant="21" id="2oX-QC-p8l"/>
+                            <constraint firstItem="fcZ-tu-gPm" firstAttribute="leading" secondItem="N6k-cA-0N2" secondAttribute="leading" constant="21" id="Bag-v5-Cgo"/>
+                            <constraint firstAttribute="trailing" secondItem="dwB-A2-Nlu" secondAttribute="trailing" constant="20" id="DCu-ZT-gKn"/>
+                            <constraint firstAttribute="trailing" secondItem="eiV-EI-xPF" secondAttribute="trailing" id="IbX-MJ-4Yl"/>
+                            <constraint firstItem="7DF-pg-upw" firstAttribute="leading" secondItem="N6k-cA-0N2" secondAttribute="leading" constant="21" id="LSe-Ue-rxd"/>
+                            <constraint firstItem="NuT-VW-spO" firstAttribute="top" secondItem="N6k-cA-0N2" secondAttribute="top" id="MoH-ky-B19"/>
+                            <constraint firstItem="dwB-A2-Nlu" firstAttribute="baseline" secondItem="eiV-EI-xPF" secondAttribute="baseline" constant="32" id="OLM-5V-P4x"/>
+                            <constraint firstItem="eiV-EI-xPF" firstAttribute="top" secondItem="N6k-cA-0N2" secondAttribute="top" id="Qs4-h6-n3v"/>
+                            <constraint firstAttribute="trailing" secondItem="NuT-VW-spO" secondAttribute="trailing" id="Zvw-Hb-rPW"/>
+                            <constraint firstItem="fcZ-tu-gPm" firstAttribute="top" secondItem="XX1-2g-lu5" secondAttribute="bottom" constant="15" id="eiB-9H-UgS"/>
+                            <constraint firstItem="eiV-EI-xPF" firstAttribute="leading" secondItem="N6k-cA-0N2" secondAttribute="leading" id="gMK-hh-jcT"/>
+                            <constraint firstItem="7DF-pg-upw" firstAttribute="top" secondItem="fcZ-tu-gPm" secondAttribute="bottom" constant="53" id="hJZ-9N-xbO"/>
+                            <constraint firstItem="NuT-VW-spO" firstAttribute="leading" secondItem="N6k-cA-0N2" secondAttribute="leading" id="w9S-D5-ogB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rkM-go-B7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3072.8000000000002" y="-60.719640179910051"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UJm-VA-mwx">
@@ -855,7 +943,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="5 - Add" width="750" height="1334"/>
         <image name="add" width="126" height="126"/>
+        <image name="addtask-bg" width="750" height="380"/>
         <image name="back" width="42" height="42"/>
         <image name="birthday" width="40" height="43"/>
         <image name="email" width="41" height="35"/>
@@ -867,6 +957,7 @@
         <image name="right" width="18" height="33"/>
         <image name="search" width="45" height="44"/>
         <image name="signup-bg" width="750" height="1334"/>
+        <image name="user-profile" width="202" height="202"/>
         <image name="username" width="40" height="39"/>
     </resources>
 </document>
