@@ -7,7 +7,6 @@
 //
 
 #import "DateCollectionViewCell.h"
-#import "Helpers.h"
 
 @interface DateCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *weekdayLabel;
