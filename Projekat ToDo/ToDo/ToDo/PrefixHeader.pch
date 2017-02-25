@@ -13,5 +13,6 @@
 #import <UIKit/UIKit.h>
 #import "Constants.h"
 #import "Helpers.h"
+#import "DataManager.h"
 
 #endif /* PrefixHeader_pch */
