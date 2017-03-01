@@ -9,8 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+@protocol DataManagerDelegate <NSObject>
+@optional
+- (void)dataManagerDidUpdateLocality;
+@end
+
 @interface DataManager : NSObject
-@property (strong,nonatomic) CLLocation *userLocation;
+@property (strong, nonatomic) CLLocation *userLocation;
 @property (strong, nonatomic) NSString *userLocality;
+@property (weak, nonatomic) id<DataManagerDelegate> delegate;
 + (instancetype)sharedManager;
 @end

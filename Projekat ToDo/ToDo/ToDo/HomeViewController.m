@@ -154,6 +154,13 @@
     [self configureTasks];
     [self configureUserImage];
     self.selectedDate = [NSDate date];
+    
+    //Load image from NSUserDefaults
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]) {
+        NSData *data = [[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE];
+        UIImage *image = [[UIImage alloc]initWithData:data];
+        self.userImageView.image = image;
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -211,6 +218,11 @@
     }
     
     self.userImageView.image = image;
+    
+    //Store image to NSUserDefaults
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:USER_IMAGE];
+    [[NSUserDefaults standardUserDefaults] synchronize]; //ovo radimo kako bi odmah presao u NSUserDefault, inace ako ga nesto rpekine, nece se sacuvati. Uvek ovo pisemo!
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

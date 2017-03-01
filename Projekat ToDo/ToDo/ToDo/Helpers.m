@@ -42,4 +42,25 @@
     return (dateComponents.day == otherdateComponents.day) && (dateComponents.month == otherdateComponents.month) && (dateComponents.year == otherdateComponents.year);
 
 }
+
++ (void)saveCustomObjectToUserDefaults:(id)object forKey:(NSString *)key {
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:object];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:encodedObject forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (id)loadCustomObjectFromUserDefaultsForKey:(NSString *)key {
+    NSData *decodedObject = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    id object = [NSKeyedUnarchiver unarchiveObjectWithData:decodedObject];
+    return object;
+}
+
++ (BOOL)isLoggedIn {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_UD]) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

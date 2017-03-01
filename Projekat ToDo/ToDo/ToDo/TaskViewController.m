@@ -9,7 +9,7 @@
 #import "TaskViewController.h"
 #import <MapKit/MapKit.h>
 
-@interface TaskViewController() <UITextFieldDelegate>
+@interface TaskViewController() <UITextFieldDelegate, DataManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
@@ -59,12 +59,40 @@
     }
 }
 
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.locationLabel.text = [DataManager sharedManager].userLocality;
+    
+    // VIA DELEGATE
+    // DataManager *dataManager = [DataManager sharedManager];
+    [DataManager sharedManager].delegate = self;
+    
+    // VIA NOTIFICATION
+    [[NSNotificationCenter defaultCenter] addObserverForName:LOCALITY_UPDATED_NOTIFICATION object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        self.locationLabel.text = [DataManager sharedManager].userLocality;
+    }];
+}
+
+// Uvek ovo stavljamo jer kad predjemo na drugi ekran nas ta info ne zanima
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     
     return YES;
+}
+
+#pragma mark - DataManagerDelegate
+
+- (void)dataManagerDidUpdateLocality {
+    self.locationLabel.text = [DataManager sharedManager].userLocality;
 }
 
 @end

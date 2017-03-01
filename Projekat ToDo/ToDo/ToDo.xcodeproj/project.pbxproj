@@ -10,6 +10,7 @@
 		B207C9991E16D11600830639 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B207C9981E16D11600830639 /* SignUpViewController.m */; };
 		B21217461E4F0F9B005DABF5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21217451E4F0F9B005DABF5 /* HomeViewController.m */; };
 		B247947F1E54CAC200E5AFB2 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B247947E1E54CAC200E5AFB2 /* Helpers.m */; };
+		B29FA7661E674D4100131D27 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B29FA7651E674D4100131D27 /* User.m */; };
 		B2ACA7501E617A8F006F0040 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2ACA74F1E617A8F006F0040 /* CoreLocation.framework */; };
 		B2ACA7531E61832A006F0040 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ACA7521E61832A006F0040 /* DataManager.m */; };
 		B2ACA7551E618BA3006F0040 /* Sistemi, Serbia.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B2ACA7541E618BA3006F0040 /* Sistemi, Serbia.gpx */; };
@@ -31,6 +32,8 @@
 		B21217451E4F0F9B005DABF5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		B247947D1E54CAC200E5AFB2 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		B247947E1E54CAC200E5AFB2 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
+		B29FA7641E674D4100131D27 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B29FA7651E674D4100131D27 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		B2ACA74F1E617A8F006F0040 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B2ACA7511E61832A006F0040 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		B2ACA7521E61832A006F0040 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
@@ -67,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B29FA7631E674D1500131D27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B29FA7641E674D4100131D27 /* User.h */,
+				B29FA7651E674D4100131D27 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		B2E568371E57842600D92FA7 /* Application Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +162,7 @@
 		C3EF78761E01BDD600A12F37 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				B29FA7631E674D1500131D27 /* Models */,
 				B2E5683B1E57854000D92FA7 /* Cells */,
 				B2E568381E5784A500D92FA7 /* View Controllers */,
 				B2E568391E5784B800D92FA7 /* Utilities */,
@@ -249,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29FA7661E674D4100131D27 /* User.m in Sources */,
 				C3EF787C1E01BDD600A12F37 /* AppDelegate.m in Sources */,
 				B2F25C801E5E1E0C00C47656 /* TaskViewController.m in Sources */,
 				B2E5683E1E57858600D92FA7 /* DateCollectionViewCell.m in Sources */,

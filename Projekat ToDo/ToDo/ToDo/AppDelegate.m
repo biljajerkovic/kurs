@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface AppDelegate() <CLLocationManagerDelegate>
@@ -32,6 +33,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self configureLocationManager];
+    
+    // If user is logged in, we should present HomeViewController
+    if ([Helpers isLoggedIn]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+        
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+        navigationController.navigationBarHidden = YES;
+        
+        self.window.rootViewController = navigationController;
+    }
     
     return YES;
 }

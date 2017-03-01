@@ -36,6 +36,18 @@
     }];
 }
 
+- (void)setUserLocality:(NSString *)userLocality {
+    _userLocality = userLocality;
+    
+    // VIA DELEGATE
+    if (self.delegate) {
+        [self.delegate dataManagerDidUpdateLocality];
+    }
+    
+    // VIA NOTIFICATION
+    [[NSNotificationCenter defaultCenter] postNotificationName:LOCALITY_UPDATED_NOTIFICATION object:nil];
+}
+
 #pragma mark -
 
 + (instancetype)sharedManager {

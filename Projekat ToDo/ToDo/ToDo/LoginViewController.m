@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#define kAnimationDuration 0.75f
+#import "User.h"
 
 @interface LoginViewController()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textFieldsContainerViewBottomConstraint;
@@ -41,6 +41,14 @@
     NSLog(@"Logging in with %@ and %@",
           self.usernameTextField.text,
           self.passwordTextField.text);
+    
+    // Save user to NSUserDefaults
+    User *user = [[User alloc]init];
+    user.username = self.usernameTextField.text;
+    user.password = self.passwordTextField.text;
+    [Helpers saveCustomObjectToUserDefaults:user forKey:USER_UD];
+    
+    [self performSegueWithIdentifier:@"HomeSegue" sender:nil];
 }
 
 #pragma mark - Private API
