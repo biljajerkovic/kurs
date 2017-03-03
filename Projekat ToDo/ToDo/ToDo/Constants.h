@@ -19,6 +19,11 @@ typedef NS_ENUM(NSInteger, TaskGroup) {
 // Constants
 #define kAnimationDuration 0.3f
 
+// Colors
+#define kColorCompleted [UIColor colorWithRed:73.0/255.0 green:211.0/255.0 blue:194.0/255.0 alpha:1.0]
+#define kColorNotComplited [UIColor colorWithRed:254.0/255.0 green:172.0/255.0 blue:73.0/255.0 alpha:1.0]
+#define kColorInProgress [UIColor colorWithRed:187.0/255.0 green:114.0/255.0 blue:255.0/255.0 alpha:1.0]
+
 // Notifications
 static NSString *const LOCALITY_UPDATED_NOTIFICATION = @"LOCALITY_UPDATED_NOTIFICATION";
 
