@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 #import <CoreLocation/CoreLocation.h>
 
 @protocol DataManagerDelegate <NSObject>
@@ -19,4 +20,17 @@
 @property (strong, nonatomic) NSString *userLocality;
 @property (weak, nonatomic) id<DataManagerDelegate> delegate;
 + (instancetype)sharedManager;
+
+// CRUD metode (create, read, update, delete) - uvek kad radimo sa bazom ove metode koristimo
+- (NSMutableArray *)fetchEntity:(NSString *)entityName
+                     withFilter:(NSString *)filter
+                    withSortAsc:(BOOL)sortAscending
+                         forKey:(NSString *)sortKey;
+- (void)deleteObject:(NSManagedObject *)object;
+- (void)updateObject:(NSManagedObject *)object;
+- (void)logObject:(NSManagedObject *)object;
+- (NSInteger)numberOfTasksPerTaskGroup:(TaskGroup)group;
+- (void)saveTaskWithTitle:(NSString *)title
+              description:(NSString *)description
+                    group:(NSInteger)group;
 @end

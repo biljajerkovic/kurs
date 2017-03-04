@@ -713,14 +713,14 @@
                                 <rect key="frame" x="0.0" y="456" width="375" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="70" id="6iT-qf-lJJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="70" id="6iT-qf-lJJ" customClass="TaskTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6iT-qf-lJJ" id="cal-5q-apP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsN-Cj-jLJ" userLabel="Status View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsN-Cj-jLJ" userLabel="Group View">
                                                     <rect key="frame" x="0.0" y="0.0" width="3" height="69"/>
                                                     <color key="backgroundColor" red="1" green="0.21442827410000001" blue="0.23630740929999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -767,6 +767,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="KsN-Cj-jLJ" secondAttribute="trailing" constant="372" id="ugA-Vi-5Vt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="luf-Bq-TJM" id="04n-G6-5C3"/>
+                                            <outlet property="groupView" destination="KsN-Cj-jLJ" id="KTW-ou-6xX"/>
+                                            <outlet property="titleLabel" destination="bhr-Gt-ydQ" id="FBd-78-OZn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
