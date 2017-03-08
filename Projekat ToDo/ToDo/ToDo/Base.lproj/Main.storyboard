@@ -764,7 +764,6 @@
                                                 <constraint firstItem="bhr-Gt-ydQ" firstAttribute="top" secondItem="kSa-id-eyb" secondAttribute="top" id="kZK-7e-Eiz"/>
                                                 <constraint firstAttribute="trailing" secondItem="bhr-Gt-ydQ" secondAttribute="trailing" constant="8" id="ksT-VV-hvk"/>
                                                 <constraint firstItem="luf-Bq-TJM" firstAttribute="trailing" secondItem="bhr-Gt-ydQ" secondAttribute="trailing" id="s0t-zk-35q"/>
-                                                <constraint firstAttribute="trailing" secondItem="KsN-Cj-jLJ" secondAttribute="trailing" constant="372" id="ugA-Vi-5Vt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -790,10 +789,10 @@
                                     <segue destination="NvC-Uy-33s" kind="show" id="CuH-ue-IQX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5O-NA-gJ0">
-                                <rect key="frame" x="157" y="551" width="60.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5O-NA-gJ0">
+                                <rect key="frame" x="187.5" y="561.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

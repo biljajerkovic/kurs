@@ -76,28 +76,56 @@
 
 #pragma mark - Public API
 
-- (NSMutableArray *)fetchEntity:(NSString *)entityName withFilter:(NSString *)filter withSortAsc:(BOOL)sortAscending forKey:(NSString *)sortKey {
+- (NSArray *)fetchEntity:(NSString *)entityName withFilter:(NSString *)filter withSortAsc:(BOOL)sortAscending forKey:(NSString *)sortKey {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init]; //kreiramo objekat fetchRequest
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext]; //kreiramo entityDescription za odredjeni entitet u zadatom objectContext-u
+    [fetchRequest setEntity:entityDescription]; //setuj fetchRequest za entityDescription (koji objekat izvlacimo iz baze)
     
+    // Sorting
+    if (sortKey) {
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:sortAscending]; //ako postoji sortKey kreiraj sortDescriptor sa kljucem (atributom), moze da postoji vise filtera odnosno kljuceva, uzlazno ili silazno
+        [fetchRequest setSortDescriptors:@[sortDescriptor]]; //setuj fetchRequest sa sortDescriptorima iz niza
+    }
+    
+    // Filtering
+    if (filter) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:filter];
+        [fetchRequest setPredicate:predicate];
+    }
+    
+    // Execute fetch request
+    NSError *error; //prazan objekat error
+    NSArray *resultsArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (error) {
+        NSLog(@"Error fetching: %@", error.localizedDescription);
+    }
+    
+    return resultsArray;
 }
 
 - (void)deleteObject:(NSManagedObject *)object {
     [self.managedObjectContext deleteObject:object];
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [appDelegate saveContext];
+    [self.managedObjectContext save:nil];
 }
 
 - (void)updateObject:(NSManagedObject *)object {
-    NSError *error = nil;
-    if ([object.managedObjectContext hasChanges] && ![object.managedObjectContext save:&error]) {
-        NSLog(@"Error updating object in database: %@, %@", error.localizedDescription, error.userInfo);
-    }
+    [object.managedObjectContext save:nil];
 }
 
 - (void)logObject:(NSManagedObject *)object {
+    NSEntityDescription *description = object.entity;
+    NSDictionary *attributes = [description attributesByName];
+    
+    for (NSString *attribute in attributes) {
+        NSLog(@"%@ = %@,", attribute, [object valueForKey:attribute]); //ispisi atribut sa njegovom vrednoscu pod tim atributom
+    }
     
 }
 - (NSInteger)numberOfTasksPerTaskGroup:(TaskGroup)group {
-    NSArray *taskArray = [self fetchEntity:NSStringFromClass([DBTask class]) withFilter:[NSString stringWithFormat:@"group = %ld", group] withSortAsc:NO forKey:nil];
+    NSString *filter = [NSString stringWithFormat:@"group = %ld", group];
+    
+    NSArray *taskArray = [self fetchEntity:NSStringFromClass([DBTask class]) withFilter:filter withSortAsc:NO forKey:nil];
     
     return taskArray.count;
 }
@@ -114,7 +142,11 @@
         task.longitude = self.userLocation.coordinate.longitude;
     }
     
-    task.date = [NSDate date];
+    // Date
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = DATE_FORMAT;
+    task.date = [dateFormatter stringFromDate:[NSDate date]];
+    
     task.group = group;
     
     // Save

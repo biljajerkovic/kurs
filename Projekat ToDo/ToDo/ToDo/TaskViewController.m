@@ -20,6 +20,7 @@
 //@property (weak, nonatomic) IBOutlet UIView *orangeView;
 //@property (weak, nonatomic) IBOutlet UIButton *purpleView;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *viewsArray;
+@property (nonatomic) NSInteger group;
 @end
 
 @implementation TaskViewController
@@ -31,6 +32,11 @@
 }
 
 - (IBAction)addButtonTapped:(UIButton *)sender {
+    if ([self validationPassed]) {
+        [[DataManager sharedManager] saveTaskWithTitle:self.titleTextField.text description:self.descriptionTextField.text group:self.group];
+        
+        [self backButtonTapped:nil];
+    }
 }
 
 - (IBAction)groupButtonTapped:(UIButton *)sender {
@@ -50,6 +56,8 @@
 //            break;
 //    }
     
+    self.group = sender.tag;
+    
     for (UIView *view in self.viewsArray) {
         if (view.tag == sender.tag) {
             [UIView animateWithDuration:kAnimationDuration animations:^{
@@ -59,10 +67,28 @@
     }
 }
 
+#pragma mark - Private API
+
+- (BOOL)validationPassed {
+    if (self.titleTextField.text == 0) {
+        [self showAlertWithTitle:@"Error" andMessage:@"Please enter task title"];
+        return NO; //ako nema title prikazi alert i vrati da nije izvrsena metoda
+    }
+    
+    if (self.descriptionTextField.text == 0) {
+        [self showAlertWithTitle:@"Error" andMessage:@"Please enter description"];
+        return NO; //ako nema description prikazi alert i vrati da nije izvrsena metoda
+    }
+    
+    return YES; //ako ima i title i description prodji
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.group = TaskGroupNotComplited; //setujemo defoltnu grupu
     
     self.locationLabel.text = [DataManager sharedManager].userLocality;
     

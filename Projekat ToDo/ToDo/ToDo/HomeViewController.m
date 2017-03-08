@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "DateCollectionViewCell.h"
+#import "TaskTableViewCell.h"
 
 @interface HomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *datesArray;
+@property (strong, nonatomic) NSArray *tasksArray;
 @property (strong, nonatomic) NSDate *selectedDate;
 @end
 
@@ -35,7 +37,7 @@
     _selectedDate = selectedDate;
     
     [self configureCalendar];
-    [self.tableView reloadData];
+    [self configureTasks];
 }
 
 #pragma mark - Actions
@@ -103,7 +105,13 @@
 }
 
 - (void)configureTasks {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = DATE_FORMAT;
     
+    NSString *filter = [NSString stringWithFormat:@"date LIKE '%@'", [dateFormatter stringFromDate:self.selectedDate]];
+    
+    self.tasksArray = [[DataManager sharedManager] fetchEntity:NSStringFromClass (DBTask.class) withFilter:filter withSortAsc:YES forKey:@"date"];
+    [self.tableView reloadData];
 }
 
 - (void)configureCalendar {
@@ -151,9 +159,8 @@
     [super viewDidLoad];
     
     [self configureWelcomeLabel];
-    [self configureTasks];
     [self configureUserImage];
-    self.selectedDate = [NSDate date];
+    self.tableView.tableFooterView = [[UIView alloc] init]; // da nemamo linije ispod celija
     
     //Load image from NSUserDefaults
     if ([[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]) {
@@ -161,6 +168,12 @@
         UIImage *image = [[UIImage alloc]initWithData:data];
         self.userImageView.image = image;
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated { //da se setuju taskovi cim kliknemo na add,odnosno kad setuje datum ucitava task
+    [super viewWillAppear:animated];
+    
+    self.selectedDate = [NSDate date];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -193,11 +206,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.tasksArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    TaskTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    cell.task = self.tasksArray[indexPath.row];
     
     return cell;
 }

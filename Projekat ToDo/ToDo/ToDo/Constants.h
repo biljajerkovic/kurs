@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, TaskGroup) {
 
 // Constants
 #define kAnimationDuration 0.3f
+static NSString *const DATE_FORMAT = @"yyyy-MM-dd";
 
 // Colors
 #define kColorCompleted [UIColor colorWithRed:73.0/255.0 green:211.0/255.0 blue:194.0/255.0 alpha:1.0]

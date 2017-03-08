@@ -17,6 +17,7 @@
     
     self.titleLabel.text = task.title;
     self.descriptionLabel.text = task.desc;
+    self.groupView.backgroundColor = [task groupColor];
 }
 
 @end

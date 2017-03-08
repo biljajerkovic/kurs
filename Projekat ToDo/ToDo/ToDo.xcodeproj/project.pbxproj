@@ -17,6 +17,7 @@
 		B2ACA7501E617A8F006F0040 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2ACA74F1E617A8F006F0040 /* CoreLocation.framework */; };
 		B2ACA7531E61832A006F0040 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ACA7521E61832A006F0040 /* DataManager.m */; };
 		B2ACA7551E618BA3006F0040 /* Sistemi, Serbia.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B2ACA7541E618BA3006F0040 /* Sistemi, Serbia.gpx */; };
+		B2E1317F1E70918A0056A4D4 /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E1317E1E70918A0056A4D4 /* UIViewController+Utilities.m */; };
 		B2E37CBA1E6AB17C00D62BDC /* DBTask+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E37CB91E6AB17C00D62BDC /* DBTask+Utilities.m */; };
 		B2E5683E1E57858600D92FA7 /* DateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E5683D1E57858600D92FA7 /* DateCollectionViewCell.m */; };
 		B2E97F4A1E60B3F8009A3D61 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E97F491E60B3F8009A3D61 /* MapKit.framework */; };
@@ -46,6 +47,8 @@
 		B2ACA7511E61832A006F0040 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		B2ACA7521E61832A006F0040 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		B2ACA7541E618BA3006F0040 /* Sistemi, Serbia.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sistemi, Serbia.gpx"; sourceTree = "<group>"; };
+		B2E1317D1E70918A0056A4D4 /* UIViewController+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
+		B2E1317E1E70918A0056A4D4 /* UIViewController+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
 		B2E37CB81E6AB17C00D62BDC /* DBTask+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBTask+Utilities.h"; sourceTree = "<group>"; };
 		B2E37CB91E6AB17C00D62BDC /* DBTask+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBTask+Utilities.m"; sourceTree = "<group>"; };
 		B2E5683C1E57858600D92FA7 /* DateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCollectionViewCell.h; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				B2ACA7511E61832A006F0040 /* DataManager.h */,
 				B2ACA7521E61832A006F0040 /* DataManager.m */,
 				B2E97F4B1E60B72C009A3D61 /* Constants.h */,
+				B2E1317D1E70918A0056A4D4 /* UIViewController+Utilities.h */,
+				B2E1317E1E70918A0056A4D4 /* UIViewController+Utilities.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				B247947F1E54CAC200E5AFB2 /* Helpers.m in Sources */,
 				B2E37CBA1E6AB17C00D62BDC /* DBTask+Utilities.m in Sources */,
 				B21217461E4F0F9B005DABF5 /* HomeViewController.m in Sources */,
+				B2E1317F1E70918A0056A4D4 /* UIViewController+Utilities.m in Sources */,
 				B2ACA7531E61832A006F0040 /* DataManager.m in Sources */,
 				B29C57B21E69F92400F243CA /* TaskTableViewCell.m in Sources */,
 				B29C57A71E69E57000F243CA /* ToDo.xcdatamodeld in Sources */,
