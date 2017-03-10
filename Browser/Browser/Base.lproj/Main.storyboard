@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bq2-PI-JD1">
+                                <rect key="frame" x="8" y="28" width="359" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xad-BG-42E"/>
+                                </connections>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MjZ-2c-fLo">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Back" id="EAL-0G-8L5">
+                                        <connections>
+                                            <action selector="backBarButtonTapped:" destination="BYZ-38-t0r" id="017-4I-Vqh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Forward" id="nje-zq-8dP">
+                                        <connections>
+                                            <action selector="forwardBarButtonTapped:" destination="BYZ-38-t0r" id="8d9-95-vCB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="I7m-ec-ETK"/>
+                                    <barButtonItem systemItem="add" id="K7T-XC-wPQ">
+                                        <connections>
+                                            <action selector="addBarButtonTapped:" destination="BYZ-38-t0r" id="XDc-oX-2jH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GFl-zc-hNz"/>
+                                    <barButtonItem title="Share" id="JVo-li-aTq">
+                                        <connections>
+                                            <action selector="shareBarButtonTapped:" destination="BYZ-38-t0r" id="kH1-qW-VDZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Bookmarks" id="Zrh-uI-qUT">
+                                        <connections>
+                                            <action selector="bookmarksBarButtonTapped:" destination="BYZ-38-t0r" id="yBp-B9-XoR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENh-Cy-5op">
+                                <rect key="frame" x="0.0" y="66" width="375" height="557"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JmF-Z9-Orf"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MjZ-2c-fLo" secondAttribute="trailing" id="2rO-jj-gqZ"/>
+                            <constraint firstItem="Bq2-PI-JD1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="6FX-Hf-MmA"/>
+                            <constraint firstItem="Bq2-PI-JD1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="EZb-3e-TcH"/>
+                            <constraint firstAttribute="trailing" secondItem="Bq2-PI-JD1" secondAttribute="trailing" constant="8" id="Nsr-QC-jfD"/>
+                            <constraint firstItem="MjZ-2c-fLo" firstAttribute="top" secondItem="ENh-Cy-5op" secondAttribute="bottom" id="Rt5-oe-6ES"/>
+                            <constraint firstItem="ENh-Cy-5op" firstAttribute="top" secondItem="Bq2-PI-JD1" secondAttribute="bottom" constant="8" id="SNy-Dn-n3v"/>
+                            <constraint firstItem="MjZ-2c-fLo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="awJ-a1-rKy"/>
+                            <constraint firstItem="ENh-Cy-5op" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cON-Z8-NQV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MjZ-2c-fLo" secondAttribute="bottom" id="f7q-E8-6xt"/>
+                            <constraint firstAttribute="trailing" secondItem="ENh-Cy-5op" secondAttribute="trailing" id="k2e-PL-HqB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="urlTextField" destination="Bq2-PI-JD1" id="dHu-VO-nYp"/>
+                        <outlet property="webView" destination="ENh-Cy-5op" id="xR9-Mb-yG3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
