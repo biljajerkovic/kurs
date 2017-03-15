@@ -21,4 +21,19 @@
         return kColorInProgress;
     }
 }
+
+#pragma mark - MKAnnotation
+
+- (NSString *)title {
+    return self.heading;
+}
+
+- (NSString *)subtitle {
+    return self.desc;
+}
+
+- (CLLocationCoordinate2D)coordinate {
+    return CLLocationCoordinate2DMake(self.latitude, self.longitude);
+}
+
 @end

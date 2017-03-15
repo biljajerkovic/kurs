@@ -17,19 +17,24 @@ typedef NS_ENUM(NSInteger, TaskGroup) {
 };
 
 // Constants
-#define kAnimationDuration 0.3f
+#define kAnimationDuration  0.3f
+#define kSpanDelta          0.5f
 static NSString *const DATE_FORMAT = @"yyyy-MM-dd";
 
+// Macros
+#define DATA_MANAGER [DataManager sharedManager]
+#define COLOR(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
 // Colors
-#define kColorCompleted [UIColor colorWithRed:73.0/255.0 green:211.0/255.0 blue:194.0/255.0 alpha:1.0]
-#define kColorNotComplited [UIColor colorWithRed:254.0/255.0 green:172.0/255.0 blue:73.0/255.0 alpha:1.0]
-#define kColorInProgress [UIColor colorWithRed:187.0/255.0 green:114.0/255.0 blue:255.0/255.0 alpha:1.0]
+#define kColorCompleted     COLOR(73.0,211.0,194.0,1.0)
+#define kColorNotComplited  COLOR(254.0,172.0,73.0,1.0)
+#define kColorInProgress    COLOR(187.0,114.0,255.0,1.0)
 
 // Notifications
 static NSString *const LOCALITY_UPDATED_NOTIFICATION = @"LOCALITY_UPDATED_NOTIFICATION";
 
 // User defaults
 static NSString *const USER_IMAGE = @"USER_IMAGE";
-static NSString *const USER_UD = @"USER_UD";
+static NSString *const USER_UD =    @"USER_UD";
 
 #endif /* Constants_h */

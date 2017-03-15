@@ -22,7 +22,7 @@
 + (instancetype)sharedManager;
 
 // CRUD metode (create, read, update, delete) - uvek kad radimo sa bazom ove metode koristimo
-- (NSArray *)fetchEntity:(NSString *)entityName
+- (NSMutableArray *)fetchEntity:(NSString *)entityName
                      withFilter:(NSString *)filter
                     withSortAsc:(BOOL)sortAscending
                          forKey:(NSString *)sortKey;

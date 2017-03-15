@@ -15,7 +15,7 @@
 - (void)setTask:(DBTask *)task {
     _task = task;
     
-    self.titleLabel.text = task.title;
+    self.titleLabel.text = task.heading;
     self.descriptionLabel.text = task.desc;
     self.groupView.backgroundColor = [task groupColor];
 }

@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TaskViewController : UIViewController
+@property (strong, nonatomic) DBTask *task;
 @end

@@ -84,8 +84,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     if (locations.count > 0) {
-        DataManager *dataManager = [DataManager sharedManager];
-        dataManager.userLocation = [locations lastObject];
+        DATA_MANAGER.userLocation = [locations lastObject];
     }
 }
 

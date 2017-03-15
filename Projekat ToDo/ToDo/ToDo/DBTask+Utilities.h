@@ -7,7 +7,8 @@
 //
 
 #import "DBTask+CoreDataClass.h"
+#import <MapKit/MapKit.h>
 
-@interface DBTask (Utilities)
+@interface DBTask (Utilities) <MKAnnotation>
 - (UIColor *)groupColor;
 @end

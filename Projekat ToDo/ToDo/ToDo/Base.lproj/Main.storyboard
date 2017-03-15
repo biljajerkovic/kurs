@@ -786,7 +786,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="add"/>
                                 <connections>
-                                    <segue destination="NvC-Uy-33s" kind="show" id="CuH-ue-IQX"/>
+                                    <segue destination="NvC-Uy-33s" kind="show" identifier="TaskSegue" id="CuH-ue-IQX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5O-NA-gJ0">

@@ -76,7 +76,7 @@
 
 #pragma mark - Public API
 
-- (NSArray *)fetchEntity:(NSString *)entityName withFilter:(NSString *)filter withSortAsc:(BOOL)sortAscending forKey:(NSString *)sortKey {
+- (NSMutableArray *)fetchEntity:(NSString *)entityName withFilter:(NSString *)filter withSortAsc:(BOOL)sortAscending forKey:(NSString *)sortKey {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init]; //kreiramo objekat fetchRequest
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext]; //kreiramo entityDescription za odredjeni entitet u zadatom objectContext-u
     [fetchRequest setEntity:entityDescription]; //setuj fetchRequest za entityDescription (koji objekat izvlacimo iz baze)
@@ -101,7 +101,7 @@
         NSLog(@"Error fetching: %@", error.localizedDescription);
     }
     
-    return resultsArray;
+    return [resultsArray mutableCopy];
 }
 
 - (void)deleteObject:(NSManagedObject *)object {
@@ -134,7 +134,7 @@
               description:(NSString *)description
                     group:(NSInteger)group {
     DBTask *task = (DBTask *)[NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([DBTask class]) inManagedObjectContext:self.managedObjectContext];
-    task.title = title;
+    task.heading = title;
     task.desc = description;
     
     if (self.userLocation) {
