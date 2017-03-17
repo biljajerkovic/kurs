@@ -62,12 +62,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self configureLocationManager];
     
-    // If user is logged in, we should present HomeViewController
+    // If user is logged in, we should present ContainerViewController
     if ([Helpers isLoggedIn]) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+        UIViewController *rootViewController = [Helpers initViewControllerFrom:@"ContainerViewController"];
         
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
         navigationController.navigationBarHidden = YES;
         
         self.window.rootViewController = navigationController;

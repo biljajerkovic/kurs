@@ -16,4 +16,5 @@
 + (void)saveCustomObjectToUserDefaults:(id)object forKey:(NSString *)key; //snima custom klasu u UserDefaults
 + (id)loadCustomObjectFromUserDefaultsForKey:(NSString *)key; //ucitava
 + (BOOL)isLoggedIn;
++ (UIViewController *)initViewControllerFrom:(NSString *)storyboardID;
 @end

@@ -31,7 +31,9 @@ static NSString *const DATE_FORMAT = @"yyyy-MM-dd";
 #define kColorInProgress    COLOR(187.0,114.0,255.0,1.0)
 
 // Notifications
-static NSString *const LOCALITY_UPDATED_NOTIFICATION = @"LOCALITY_UPDATED_NOTIFICATION";
+static NSString *const LOCALITY_UPDATED_NOTIFICATION    = @"LOCALITY_UPDATED_NOTIFICATION";
+static NSString *const OPEN_SIDE_MENU_NOTIFICATION      = @"OPEN_SIDE_MENU_NOTIFICATION";
+static NSString *const CLOSE_SIDE_MENU_NOTIFICATION     = @"CLOSE_SIDE_MENU_NOTIFICATION";
 
 // User defaults
 static NSString *const USER_IMAGE = @"USER_IMAGE";

@@ -63,4 +63,10 @@
     return NO;
 }
 
++ (UIViewController *)initViewControllerFrom:(NSString *)storyboardID {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                         bundle:[NSBundle mainBundle]];
+    return [storyboard instantiateViewControllerWithIdentifier:storyboardID];
+}
+
 @end

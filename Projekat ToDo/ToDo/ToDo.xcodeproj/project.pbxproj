@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B207C9991E16D11600830639 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B207C9981E16D11600830639 /* SignUpViewController.m */; };
 		B21217461E4F0F9B005DABF5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21217451E4F0F9B005DABF5 /* HomeViewController.m */; };
+		B2237B151E7C528800D7CAF0 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2237B141E7C528800D7CAF0 /* ContainerViewController.m */; };
+		B2237B181E7C52BE00D7CAF0 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2237B171E7C52BE00D7CAF0 /* SideMenuViewController.m */; };
+		B2237B1B1E7C611000D7CAF0 /* SideManuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2237B1A1E7C611000D7CAF0 /* SideManuTableViewCell.m */; };
 		B247947F1E54CAC200E5AFB2 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B247947E1E54CAC200E5AFB2 /* Helpers.m */; };
 		B29C57A71E69E57000F243CA /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B29C57A51E69E57000F243CA /* ToDo.xcdatamodeld */; };
 		B29C57AF1E69EF4000F243CA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29C57AE1E69EF4000F243CA /* CoreData.framework */; };
@@ -35,6 +38,12 @@
 		B207C9981E16D11600830639 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		B21217441E4F0F9B005DABF5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		B21217451E4F0F9B005DABF5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		B2237B131E7C528800D7CAF0 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		B2237B141E7C528800D7CAF0 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		B2237B161E7C52BE00D7CAF0 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
+		B2237B171E7C52BE00D7CAF0 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
+		B2237B191E7C611000D7CAF0 /* SideManuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideManuTableViewCell.h; sourceTree = "<group>"; };
+		B2237B1A1E7C611000D7CAF0 /* SideManuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideManuTableViewCell.m; sourceTree = "<group>"; };
 		B247947D1E54CAC200E5AFB2 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		B247947E1E54CAC200E5AFB2 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		B29C57A61E69E57000F243CA /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -116,6 +125,10 @@
 				B207C9981E16D11600830639 /* SignUpViewController.m */,
 				B2F25C7E1E5E1E0C00C47656 /* TaskViewController.h */,
 				B2F25C7F1E5E1E0C00C47656 /* TaskViewController.m */,
+				B2237B131E7C528800D7CAF0 /* ContainerViewController.h */,
+				B2237B141E7C528800D7CAF0 /* ContainerViewController.m */,
+				B2237B161E7C52BE00D7CAF0 /* SideMenuViewController.h */,
+				B2237B171E7C52BE00D7CAF0 /* SideMenuViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -150,6 +163,8 @@
 				B2E5683D1E57858600D92FA7 /* DateCollectionViewCell.m */,
 				B29C57B01E69F92400F243CA /* TaskTableViewCell.h */,
 				B29C57B11E69F92400F243CA /* TaskTableViewCell.m */,
+				B2237B191E7C611000D7CAF0 /* SideManuTableViewCell.h */,
+				B2237B1A1E7C611000D7CAF0 /* SideManuTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -290,14 +305,17 @@
 				B2E5683E1E57858600D92FA7 /* DateCollectionViewCell.m in Sources */,
 				C3EF78791E01BDD600A12F37 /* main.m in Sources */,
 				B207C9991E16D11600830639 /* SignUpViewController.m in Sources */,
+				B2237B1B1E7C611000D7CAF0 /* SideManuTableViewCell.m in Sources */,
 				B247947F1E54CAC200E5AFB2 /* Helpers.m in Sources */,
 				B2E37CBA1E6AB17C00D62BDC /* DBTask+Utilities.m in Sources */,
 				B21217461E4F0F9B005DABF5 /* HomeViewController.m in Sources */,
 				B2E1317F1E70918A0056A4D4 /* UIViewController+Utilities.m in Sources */,
 				B2ACA7531E61832A006F0040 /* DataManager.m in Sources */,
 				B29C57B21E69F92400F243CA /* TaskTableViewCell.m in Sources */,
+				B2237B181E7C52BE00D7CAF0 /* SideMenuViewController.m in Sources */,
 				B29C57A71E69E57000F243CA /* ToDo.xcdatamodeld in Sources */,
 				C3EF78901E01CA8600A12F37 /* LoginViewController.m in Sources */,
+				B2237B151E7C528800D7CAF0 /* ContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
