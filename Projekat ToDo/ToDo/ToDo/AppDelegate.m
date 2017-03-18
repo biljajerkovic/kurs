@@ -65,11 +65,8 @@
     // If user is logged in, we should present ContainerViewController
     if ([Helpers isLoggedIn]) {
         UIViewController *rootViewController = [Helpers initViewControllerFrom:@"ContainerViewController"];
-        
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
-        navigationController.navigationBarHidden = YES;
-        
-        self.window.rootViewController = navigationController;
+                
+        self.window.rootViewController = rootViewController;
     }
     
     return YES;

@@ -12,9 +12,17 @@
 @interface ContainerViewController ()
 @property (strong, nonatomic) UIButton *overlayButton;
 @property (strong, nonatomic) SideMenuViewController *sideMenuViewController;
+@property (strong, nonatomic) UINavigationController *homeNavigationController;
+
 @end
 
 @implementation ContainerViewController
+
+#pragma mark - Public API
+
+- (void)openViewController:(UIViewController *)viewController {
+    [self.homeNavigationController pushViewController:viewController animated:YES];
+}
 
 #pragma mark - Actions
 
@@ -38,6 +46,7 @@
     sideMenuViewController.view.frame = frame;
     
     self.sideMenuViewController = (SideMenuViewController *)sideMenuViewController;
+    self.sideMenuViewController.containerViewController = self;
 }
 
 - (void)configureOverlayButton {
@@ -52,12 +61,14 @@
 }
 
 - (void)configureHomeViewController {
-    UIViewController *homeViewController = [Helpers initViewControllerFrom:@"HomeViewController"];
+    UINavigationController *navigationController = (UINavigationController *)[Helpers initViewControllerFrom:@"HomeNavigationController"];
     
     // View controller containment
-    [self addChildViewController:homeViewController];
-    [self.view addSubview:homeViewController.view];
-    [homeViewController didMoveToParentViewController:self]; //da bi se pozvale life cycle metode
+    [self addChildViewController:navigationController];
+    [self.view addSubview:navigationController.view];
+    [navigationController didMoveToParentViewController:self]; //da bi se pozvale life cycle metode
+    
+    self.homeNavigationController = navigationController;
     
 }
 
@@ -68,7 +79,7 @@
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:kAnimationDuration animations:^{
                 CGRect frame = self.sideMenuViewController.view.frame;
-                frame.origin.x = 50.0f;
+                frame.origin.x = -kMenuOffset;
                 self.sideMenuViewController.view.frame = frame;
             }];
         }];
@@ -85,6 +96,15 @@
             }];
         }];
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:OPEN_VC_NOTIFICATION object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        
+        if ([note.object isKindOfClass:UIViewController.class]) {
+            UIViewController *toViewController = (UIViewController *)note.object;
+            [self.homeNavigationController pushViewController:toViewController animated:YES];
+        }
+    }];
+
 }
 
 #pragma mark - View Lifecycle
@@ -95,6 +115,7 @@
     [self configureHomeViewController];
     [self configureOverlayButton];
     [self configureSideMenuViewController];
+    [self registerForNotifications];
 }
 
 @end

@@ -14,7 +14,7 @@
 @interface HomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
-@property (weak, nonatomic) IBOutlet UILabel *taskLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tasksLabel;
 @property (weak, nonatomic) IBOutlet UILabel *monthYearLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -119,8 +119,8 @@
 }
 
 - (void)configureTasksLabel {
-    self.taskLabel.text = [NSString stringWithFormat:@"%ld", self.tasksArray.count];
-    self.taskLabel.hidden = (self.tasksArray.count == 0) ? YES : NO;
+    self.tasksLabel.text = [NSString stringWithFormat:@"%ld", self.tasksArray.count];
+    self.tasksLabel.hidden = (self.tasksArray.count == 0) ? YES : NO;
 }
 
 - (void)configureCalendar {

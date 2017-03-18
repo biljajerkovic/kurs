@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ContainerViewController : UIViewController
+- (void)openViewController:(UIViewController *)viewController;
 @end

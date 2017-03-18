@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContainerViewController.h"
 
 @interface SideMenuViewController : UIViewController
-
+@property (weak, nonatomic) ContainerViewController *containerViewController;
 @end

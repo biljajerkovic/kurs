@@ -12,6 +12,8 @@
 		B2237B151E7C528800D7CAF0 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2237B141E7C528800D7CAF0 /* ContainerViewController.m */; };
 		B2237B181E7C52BE00D7CAF0 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2237B171E7C52BE00D7CAF0 /* SideMenuViewController.m */; };
 		B2237B1B1E7C611000D7CAF0 /* SideManuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2237B1A1E7C611000D7CAF0 /* SideManuTableViewCell.m */; };
+		B23D273E1E7D479F00AC903C /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23D273D1E7D479F00AC903C /* StatisticsViewController.m */; };
+		B23D27411E7D47BC00AC903C /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23D27401E7D47BC00AC903C /* WalkthroughViewController.m */; };
 		B247947F1E54CAC200E5AFB2 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B247947E1E54CAC200E5AFB2 /* Helpers.m */; };
 		B29C57A71E69E57000F243CA /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B29C57A51E69E57000F243CA /* ToDo.xcdatamodeld */; };
 		B29C57AF1E69EF4000F243CA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29C57AE1E69EF4000F243CA /* CoreData.framework */; };
@@ -44,6 +46,10 @@
 		B2237B171E7C52BE00D7CAF0 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		B2237B191E7C611000D7CAF0 /* SideManuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideManuTableViewCell.h; sourceTree = "<group>"; };
 		B2237B1A1E7C611000D7CAF0 /* SideManuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideManuTableViewCell.m; sourceTree = "<group>"; };
+		B23D273C1E7D479F00AC903C /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
+		B23D273D1E7D479F00AC903C /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
+		B23D273F1E7D47BC00AC903C /* WalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
+		B23D27401E7D47BC00AC903C /* WalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
 		B247947D1E54CAC200E5AFB2 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		B247947E1E54CAC200E5AFB2 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		B29C57A61E69E57000F243CA /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
@@ -129,6 +135,10 @@
 				B2237B141E7C528800D7CAF0 /* ContainerViewController.m */,
 				B2237B161E7C52BE00D7CAF0 /* SideMenuViewController.h */,
 				B2237B171E7C52BE00D7CAF0 /* SideMenuViewController.m */,
+				B23D273C1E7D479F00AC903C /* StatisticsViewController.h */,
+				B23D273D1E7D479F00AC903C /* StatisticsViewController.m */,
+				B23D273F1E7D47BC00AC903C /* WalkthroughViewController.h */,
+				B23D27401E7D47BC00AC903C /* WalkthroughViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -302,6 +312,7 @@
 				B29FA7661E674D4100131D27 /* User.m in Sources */,
 				C3EF787C1E01BDD600A12F37 /* AppDelegate.m in Sources */,
 				B2F25C801E5E1E0C00C47656 /* TaskViewController.m in Sources */,
+				B23D273E1E7D479F00AC903C /* StatisticsViewController.m in Sources */,
 				B2E5683E1E57858600D92FA7 /* DateCollectionViewCell.m in Sources */,
 				C3EF78791E01BDD600A12F37 /* main.m in Sources */,
 				B207C9991E16D11600830639 /* SignUpViewController.m in Sources */,
@@ -314,6 +325,7 @@
 				B29C57B21E69F92400F243CA /* TaskTableViewCell.m in Sources */,
 				B2237B181E7C52BE00D7CAF0 /* SideMenuViewController.m in Sources */,
 				B29C57A71E69E57000F243CA /* ToDo.xcdatamodeld in Sources */,
+				B23D27411E7D47BC00AC903C /* WalkthroughViewController.m in Sources */,
 				C3EF78901E01CA8600A12F37 /* LoginViewController.m in Sources */,
 				B2237B151E7C528800D7CAF0 /* ContainerViewController.m in Sources */,
 			);

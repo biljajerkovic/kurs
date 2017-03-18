@@ -42,7 +42,7 @@
 
 # pragma mark - Actions
 
--(IBAction)backButtonTapped:(UIButton *)sender {
+- (IBAction)backButtonTapped:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 

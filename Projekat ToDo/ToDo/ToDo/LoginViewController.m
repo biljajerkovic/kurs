@@ -81,7 +81,6 @@
     [self.view endEditing:YES];
 }
 
-// za organizovanje koda logicke celine pragma mark (moze/ne mora)
 #pragma mark - View lifecycle
 
 -(void) viewDidLoad {

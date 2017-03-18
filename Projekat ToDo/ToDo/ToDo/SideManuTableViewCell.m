@@ -9,6 +9,4 @@
 #import "SideManuTableViewCell.h"
 
 @implementation SideManuTableViewCell
-
-
 @end
